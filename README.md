@@ -1,4 +1,4 @@
-# LQS Danışmanlık Web Sitesi
+# DNA LQS Danışmanlık Web Sitesi
 
 Modern, responsive ve profesyonel LQS (Lean, Quality, Sustainability) danışmanlık şirketi web sitesi.
 
@@ -107,4 +107,4 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 
 ---
 
-**LQS Danışmanlık** - Lean, Quality, Sustainability alanlarında uzman danışmanlık hizmetleri. 
+**DNA LQS Danışmanlık** - Lean, Quality, Sustainability alanlarında uzman danışmanlık hizmetleri. 
