@@ -286,46 +286,54 @@ function changeLanguage(lang) {
     console.log('=== LANGUAGE CHANGE COMPLETED ===');
 }
 
-// Direct button click handlers
-function setupLanguageButtons() {
-    console.log('Setting up language buttons...');
+// Simple and reliable language switcher
+function initLanguageSwitcher() {
+    console.log('=== INITIALIZING LANGUAGE SWITCHER ===');
     
-    const trButton = document.querySelector('.lang-btn[data-lang="tr"]');
-    const enButton = document.querySelector('.lang-btn[data-lang="en"]');
+    const buttons = document.querySelectorAll('.lang-btn');
+    console.log('Found buttons:', buttons.length);
     
-    if (trButton) {
-        console.log('Found TR button');
-        trButton.addEventListener('click', function(e) {
+    buttons.forEach(button => {
+        console.log('Setting up button:', button.textContent.trim());
+        
+        // Remove any existing listeners
+        button.removeEventListener('click', button._languageClickHandler);
+        
+        // Create new handler
+        button._languageClickHandler = function(e) {
             e.preventDefault();
-            console.log('TR button clicked!');
-            changeLanguage('tr');
-        });
-    }
+            e.stopPropagation();
+            
+            const lang = this.getAttribute('data-lang');
+            console.log('Button clicked:', lang);
+            
+            // Add visual feedback
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+            
+            changeLanguage(lang);
+        };
+        
+        // Add the listener
+        button.addEventListener('click', button._languageClickHandler);
+    });
     
-    if (enButton) {
-        console.log('Found EN button');
-        enButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('EN button clicked!');
-            changeLanguage('en');
-        });
-    }
-    
-    console.log('Language buttons setup complete');
+    console.log('=== LANGUAGE SWITCHER INITIALIZED ===');
 }
 
-// Initialize multiple times to ensure it works
-setupLanguageButtons();
+// Initialize immediately
+initLanguageSwitcher();
 
-// Also setup when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupLanguageButtons);
-} else {
-    setupLanguageButtons();
-}
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
 
-// Also setup when window loads
-window.addEventListener('load', setupLanguageButtons);
+// Initialize when window loads
+window.addEventListener('load', initLanguageSwitcher);
+
+// Initialize after a short delay to ensure everything is loaded
+setTimeout(initLanguageSwitcher, 100);
 
 // Counter animation for stats
 function animateCounter(element, target, duration = 2000) {
