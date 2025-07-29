@@ -76,6 +76,36 @@ body {
     transition: 0.3s;
 }
 
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 2rem;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.lang-btn.active {
+    background: #2563eb;
+    color: white;
+}
+
+.lang-btn:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -793,6 +823,10 @@ body {
         display: flex;
     }
 
+    .language-switcher {
+        margin-left: 1rem;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -866,6 +900,15 @@ body {
 
     .floating-card span {
         font-size: 1rem;
+    }
+
+    .language-switcher {
+        margin-left: 0.5rem;
+    }
+
+    .lang-btn {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
     }
 
     /* Service Detail Pages Responsive */

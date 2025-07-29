@@ -234,6 +234,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Language switcher functionality
+let currentLanguage = 'tr';
+
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    
+    // Update all elements with data attributes
+    document.querySelectorAll('[data-tr], [data-en]').forEach(element => {
+        if (element.hasAttribute(`data-${lang}`)) {
+            element.textContent = element.getAttribute(`data-${lang}`);
+        }
+    });
+    
+    // Update placeholders
+    document.querySelectorAll('[data-tr-placeholder], [data-en-placeholder]').forEach(element => {
+        if (element.hasAttribute(`data-${lang}-placeholder`)) {
+            element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
+        }
+    });
+    
+    // Update language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+}
+
+// Language switcher event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+});
+
 // Counter animation for stats
 function animateCounter(element, target, duration = 2000) {
     let start = 0;

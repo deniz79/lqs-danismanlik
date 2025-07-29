@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LQS Danışmanlık - Lean, Quality, Sustainability</title>
+    <title>DNA LQS Danışmanlık - Lean, Quality, Sustainability</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -12,15 +12,19 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-                            <div class="nav-logo">
-                    <h2>DNA LQS</h2>
-                </div>
+            <div class="nav-logo">
+                <h2>DNA LQS</h2>
+            </div>
             <ul class="nav-menu">
-                <li><a href="#home">Ana Sayfa</a></li>
-                <li><a href="#services">Hizmetler</a></li>
-                <li><a href="#about">Hakkımızda</a></li>
-                <li><a href="#contact">İletişim</a></li>
+                <li><a href="#home" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
+                <li><a href="#services" data-tr="Hizmetler" data-en="Services">Hizmetler</a></li>
+                <li><a href="#about" data-tr="Hakkımızda" data-en="About">Hakkımızda</a></li>
+                <li><a href="#contact" data-tr="İletişim" data-en="Contact">İletişim</a></li>
             </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="tr">TR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -33,10 +37,10 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">DNA LQS Danışmanlık</h1>
+                <h1 class="hero-title" data-tr="DNA LQS Danışmanlık" data-en="DNA LQS Consulting">DNA LQS Danışmanlık</h1>
                 <h2 class="hero-subtitle">Lean, Quality, Sustainability</h2>
-                <p class="hero-description">İşletmenizi dönüştürmenin en etkili ve sürdürülebilir yolu</p>
-                <button class="cta-button">İletişim</button>
+                <p class="hero-description" data-tr="İşletmenizi dönüştürmenin en etkili ve sürdürülebilir yolu" data-en="The most effective and sustainable way to transform your business">İşletmenizi dönüştürmenin en etkili ve sürdürülebilir yolu</p>
+                <button class="cta-button" data-tr="İletişim" data-en="Contact">İletişim</button>
             </div>
             <div class="hero-image">
                 <div class="hero-visual">
@@ -60,51 +64,51 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Hizmetlerimiz</h2>
+            <h2 class="section-title" data-tr="Hizmetlerimiz" data-en="Our Services">Hizmetlerimiz</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
-                    <h3>Lean Danışmanlığı</h3>
-                    <p>İşletmenizde israfı azaltın, verimliliği artırın ve süreçlerinizi optimize edin. Lean metodolojileri ile operasyonel mükemmelliğe ulaşın.</p>
+                    <h3 data-tr="Lean Danışmanlığı" data-en="Lean Consulting">Lean Danışmanlığı</h3>
+                    <p data-tr="İşletmenizde israfı azaltın, verimliliği artırın ve süreçlerinizi optimize edin. Lean metodolojileri ile operasyonel mükemmelliğe ulaşın." data-en="Reduce waste in your business, increase efficiency and optimize your processes. Achieve operational excellence with Lean methodologies.">İşletmenizde israfı azaltın, verimliliği artırın ve süreçlerinizi optimize edin. Lean metodolojileri ile operasyonel mükemmelliğe ulaşın.</p>
                     <ul>
-                        <li>5S Uygulamaları</li>
-                        <li>Kaizen Süreçleri</li>
-                        <li>Value Stream Mapping</li>
-                        <li>Kanban Sistemleri</li>
+                        <li data-tr="5S Uygulamaları" data-en="5S Applications">5S Uygulamaları</li>
+                        <li data-tr="Kaizen Süreçleri" data-en="Kaizen Processes">Kaizen Süreçleri</li>
+                        <li data-tr="Value Stream Mapping" data-en="Value Stream Mapping">Value Stream Mapping</li>
+                        <li data-tr="Kanban Sistemleri" data-en="Kanban Systems">Kanban Sistemleri</li>
                     </ul>
-                    <a href="lean-danismanlik.html" class="detail-btn">Detaylı İnce</a>
+                    <a href="lean-danismanlik.html" class="detail-btn" data-tr="Detaylı İnce" data-en="Learn More">Detaylı İnce</a>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-star"></i>
                     </div>
-                    <h3>Quality Danışmanlığı</h3>
-                    <p>Kalite yönetim sistemlerinizi güçlendirin ve müşteri memnuniyetini en üst seviyeye çıkarın. ISO standartları ile uyumlu çözümler.</p>
+                    <h3 data-tr="Quality Danışmanlığı" data-en="Quality Consulting">Quality Danışmanlığı</h3>
+                    <p data-tr="Kalite yönetim sistemlerinizi güçlendirin ve müşteri memnuniyetini en üst seviyeye çıkarın. ISO standartları ile uyumlu çözümler." data-en="Strengthen your quality management systems and maximize customer satisfaction. ISO standard compliant solutions.">Kalite yönetim sistemlerinizi güçlendirin ve müşteri memnuniyetini en üst seviyeye çıkarın. ISO standartları ile uyumlu çözümler.</p>
                     <ul>
-                        <li>ISO 9001 Uygulamaları</li>
-                        <li>Kalite Kontrol Sistemleri</li>
-                        <li>Six Sigma Metodolojisi</li>
-                        <li>Müşteri Memnuniyeti</li>
+                        <li data-tr="ISO 9001 Uygulamaları" data-en="ISO 9001 Applications">ISO 9001 Uygulamaları</li>
+                        <li data-tr="Kalite Kontrol Sistemleri" data-en="Quality Control Systems">Kalite Kontrol Sistemleri</li>
+                        <li data-tr="Six Sigma Metodolojisi" data-en="Six Sigma Methodology">Six Sigma Metodolojisi</li>
+                        <li data-tr="Müşteri Memnuniyeti" data-en="Customer Satisfaction">Müşteri Memnuniyeti</li>
                     </ul>
-                    <a href="quality-danismanlik.html" class="detail-btn">Detaylı İnce</a>
+                    <a href="quality-danismanlik.html" class="detail-btn" data-tr="Detaylı İnce" data-en="Learn More">Detaylı İnce</a>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-seedling"></i>
                     </div>
-                    <h3>Sustainability Danışmanlığı</h3>
-                    <p>Sürdürülebilir iş modelleri geliştirin ve çevresel sorumluluğunuzu yerine getirin. Gelecek nesillere değer katın.</p>
+                    <h3 data-tr="Sustainability Danışmanlığı" data-en="Sustainability Consulting">Sustainability Danışmanlığı</h3>
+                    <p data-tr="Sürdürülebilir iş modelleri geliştirin ve çevresel sorumluluğunuzu yerine getirin. Gelecek nesillere değer katın." data-en="Develop sustainable business models and fulfill your environmental responsibility. Add value for future generations.">Sürdürülebilir iş modelleri geliştirin ve çevresel sorumluluğunuzu yerine getirin. Gelecek nesillere değer katın.</p>
                     <ul>
-                        <li>ESG Stratejileri</li>
-                        <li>Çevresel Yönetim</li>
-                        <li>Sosyal Sorumluluk</li>
-                        <li>Yeşil Dönüşüm</li>
+                        <li data-tr="ESG Stratejileri" data-en="ESG Strategies">ESG Stratejileri</li>
+                        <li data-tr="Çevresel Yönetim" data-en="Environmental Management">Çevresel Yönetim</li>
+                        <li data-tr="Sosyal Sorumluluk" data-en="Social Responsibility">Sosyal Sorumluluk</li>
+                        <li data-tr="Yeşil Dönüşüm" data-en="Green Transformation">Yeşil Dönüşüm</li>
                     </ul>
-                    <a href="sustainability-danismanlik.html" class="detail-btn">Detaylı İnce</a>
+                    <a href="sustainability-danismanlik.html" class="detail-btn" data-tr="Detaylı İnce" data-en="Learn More">Detaylı İnce</a>
                 </div>
             </div>
         </div>
@@ -115,20 +119,20 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Hakkımızda</h2>
-                    <p>DNA LQS Danışmanlık olarak, işletmelerin dönüşüm süreçlerinde yanlarında yer alıyoruz. Lean, Quality ve Sustainability alanlarında uzman ekibimizle, müşterilerimizin operasyonel mükemmelliğe ulaşmasına yardımcı oluyoruz.</p>
+                    <h2 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h2>
+                    <p data-tr="DNA LQS Danışmanlık olarak, işletmelerin dönüşüm süreçlerinde yanlarında yer alıyoruz. Lean, Quality ve Sustainability alanlarında uzman ekibimizle, müşterilerimizin operasyonel mükemmelliğe ulaşmasına yardımcı oluyoruz." data-en="As DNA LQS Consulting, we stand by businesses in their transformation processes. With our expert team in Lean, Quality and Sustainability areas, we help our clients achieve operational excellence.">DNA LQS Danışmanlık olarak, işletmelerin dönüşüm süreçlerinde yanlarında yer alıyoruz. Lean, Quality ve Sustainability alanlarında uzman ekibimizle, müşterilerimizin operasyonel mükemmelliğe ulaşmasına yardımcı oluyoruz.</p>
                     <div class="stats">
                         <div class="stat">
                             <h3>150+</h3>
-                            <p>Başarılı Proje</p>
+                            <p data-tr="Başarılı Proje" data-en="Successful Projects">Başarılı Proje</p>
                         </div>
                         <div class="stat">
                             <h3>50+</h3>
-                            <p>Mutlu Müşteri</p>
+                            <p data-tr="Mutlu Müşteri" data-en="Happy Clients">Mutlu Müşteri</p>
                         </div>
                         <div class="stat">
                             <h3>10+</h3>
-                            <p>Yıllık Deneyim</p>
+                            <p data-tr="Yıllık Deneyim" data-en="Years Experience">Yıllık Deneyim</p>
                         </div>
                     </div>
                 </div>
@@ -144,45 +148,52 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">İletişim</h2>
+            <h2 class="section-title" data-tr="İletişim" data-en="Contact">İletişim</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h4>Telefon</h4>
+                            <h4 data-tr="Telefon" data-en="Phone">Telefon</h4>
                             <p>+90 532 432 71 95</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>E-posta</h4>
+                            <h4 data-tr="E-posta" data-en="Email">E-posta</h4>
                             <p>info@dnalqs.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-user"></i>
                         <div>
-                            <h4>Danışman</h4>
+                            <h4 data-tr="Danışman" data-en="Consultant">Danışman</h4>
                             <p>Erdal Yetik</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4 data-tr="Adres" data-en="Address">Adres</h4>
+                            <p>Vera house2 B2 D7 Nazlı sok, Şirintepe İzmit Kocaeli 41100 Türkiye</p>
                         </div>
                     </div>
                 </div>
                 <form class="contact-form">
                     <div class="form-group">
-                        <input type="text" placeholder="Adınız" required>
+                        <input type="text" placeholder="Adınız" data-tr-placeholder="Adınız" data-en-placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="E-posta" required>
+                        <input type="email" placeholder="E-posta" data-tr-placeholder="E-posta" data-en-placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Konu" required>
+                        <input type="text" placeholder="Konu" data-tr-placeholder="Konu" data-en-placeholder="Subject" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Mesajınız" rows="5" required></textarea>
+                        <textarea placeholder="Mesajınız" data-tr-placeholder="Mesajınız" data-en-placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Gönder</button>
+                    <button type="submit" class="submit-btn" data-tr="Gönder" data-en="Send">Gönder</button>
                 </form>
             </div>
         </div>
@@ -194,27 +205,28 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>DNA LQS Danışmanlık</h3>
-                    <p>Lean, Quality, Sustainability alanlarında uzman danışmanlık hizmetleri.</p>
+                    <p data-tr="Lean, Quality, Sustainability alanlarında uzman danışmanlık hizmetleri." data-en="Expert consulting services in Lean, Quality, and Sustainability areas.">Lean, Quality, Sustainability alanlarında uzman danışmanlık hizmetleri.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Hizmetler</h4>
+                    <h4 data-tr="Hizmetler" data-en="Services">Hizmetler</h4>
                     <ul>
-                        <li><a href="#services">Lean Danışmanlığı</a></li>
-                        <li><a href="#services">Quality Danışmanlığı</a></li>
-                        <li><a href="#services">Sustainability Danışmanlığı</a></li>
+                        <li><a href="lean-danismanlik.html" data-tr="Lean Danışmanlığı" data-en="Lean Consulting">Lean Danışmanlığı</a></li>
+                        <li><a href="quality-danismanlik.html" data-tr="Quality Danışmanlığı" data-en="Quality Consulting">Quality Danışmanlığı</a></li>
+                        <li><a href="sustainability-danismanlik.html" data-tr="Sustainability Danışmanlığı" data-en="Sustainability Consulting">Sustainability Danışmanlığı</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>İletişim</h4>
+                    <h4 data-tr="İletişim" data-en="Contact">İletişim</h4>
                     <ul>
                         <li>+90 532 432 71 95</li>
                         <li>info@dnalqs.com</li>
                         <li>Erdal Yetik</li>
+                        <li>Vera house2 B2 D7 Nazlı sok, Şirintepe İzmit Kocaeli 41100 Türkiye</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 DNA LQS Danışmanlık. Tüm hakları saklıdır.</p>
+                <p>&copy; 2024 DNA LQS Danışmanlık. <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved.">Tüm hakları saklıdır.</span></p>
             </div>
         </div>
     </footer>
