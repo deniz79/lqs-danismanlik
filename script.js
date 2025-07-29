@@ -238,19 +238,30 @@ document.addEventListener('DOMContentLoaded', () => {
 let currentLanguage = 'tr';
 
 function changeLanguage(lang) {
+    console.log('Changing language to:', lang);
     currentLanguage = lang;
     
     // Update all elements with data attributes
-    document.querySelectorAll('[data-tr], [data-en]').forEach(element => {
-        if (element.hasAttribute(`data-${lang}`)) {
-            element.textContent = element.getAttribute(`data-${lang}`);
+    const elements = document.querySelectorAll('[data-tr], [data-en]');
+    console.log('Found elements to update:', elements.length);
+    
+    elements.forEach(element => {
+        const newText = element.getAttribute(`data-${lang}`);
+        if (newText) {
+            console.log('Updating element:', element.tagName, 'to:', newText);
+            element.textContent = newText;
         }
     });
     
     // Update placeholders
-    document.querySelectorAll('[data-tr-placeholder], [data-en-placeholder]').forEach(element => {
-        if (element.hasAttribute(`data-${lang}-placeholder`)) {
-            element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
+    const placeholders = document.querySelectorAll('[data-tr-placeholder], [data-en-placeholder]');
+    console.log('Found placeholders to update:', placeholders.length);
+    
+    placeholders.forEach(element => {
+        const newPlaceholder = element.getAttribute(`data-${lang}-placeholder`);
+        if (newPlaceholder) {
+            console.log('Updating placeholder:', element.tagName, 'to:', newPlaceholder);
+            element.placeholder = newPlaceholder;
         }
     });
     
@@ -264,37 +275,38 @@ function changeLanguage(lang) {
     
     // Update HTML lang attribute
     document.documentElement.lang = lang;
+    
+    console.log('Language change completed');
 }
 
-// Language switcher event listeners
-document.addEventListener('DOMContentLoaded', () => {
+// Simple language switcher - works immediately
+function initLanguageSwitcher() {
+    console.log('Initializing language switcher...');
+    
     const langButtons = document.querySelectorAll('.lang-btn');
+    console.log('Found language buttons:', langButtons.length);
     
     langButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
+        console.log('Adding click listener to button:', btn.textContent);
+        btn.onclick = function(e) {
             e.preventDefault();
-            const lang = btn.getAttribute('data-lang');
-            console.log('Language button clicked:', lang); // Debug log
+            e.stopPropagation();
+            const lang = this.getAttribute('data-lang');
+            console.log('Button clicked:', lang);
             changeLanguage(lang);
-        });
+            return false;
+        };
     });
-    
-    // Also add event listeners immediately if DOM is already loaded
-    if (document.readyState === 'loading') {
-        // DOM is still loading, wait for DOMContentLoaded
-    } else {
-        // DOM is already loaded, add listeners immediately
-        const langButtons = document.querySelectorAll('.lang-btn');
-        langButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const lang = btn.getAttribute('data-lang');
-                console.log('Language button clicked (immediate):', lang); // Debug log
-                changeLanguage(lang);
-            });
-        });
-    }
-});
+}
+
+// Initialize immediately
+initLanguageSwitcher();
+
+// Also initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
+
+// Also initialize when window loads
+window.addEventListener('load', initLanguageSwitcher);
 
 // Counter animation for stats
 function animateCounter(element, target, duration = 2000) {
