@@ -87,13 +87,15 @@ body {
     background: transparent;
     border: 2px solid #2563eb;
     color: #2563eb;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 1.1rem;
-    min-width: 60px;
+    font-size: 1.3rem;
+    min-width: 80px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .lang-btn.active {
@@ -908,9 +910,9 @@ body {
     }
 
     .lang-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 1rem;
-        min-width: 50px;
+        padding: 0.8rem 1.5rem;
+        font-size: 1.2rem;
+        min-width: 60px;
     }
 
     /* Service Detail Pages Responsive */
