@@ -238,32 +238,38 @@ document.addEventListener('DOMContentLoaded', () => {
 let currentLanguage = 'tr';
 
 function changeLanguage(lang) {
+    console.log('=== LANGUAGE CHANGE START ===');
     console.log('Changing language to:', lang);
-    currentLanguage = lang;
     
     // Update all elements with data attributes
     const elements = document.querySelectorAll('[data-tr], [data-en]');
     console.log('Found elements to update:', elements.length);
     
+    let updatedCount = 0;
     elements.forEach(element => {
         const newText = element.getAttribute(`data-${lang}`);
         if (newText) {
-            console.log('Updating element:', element.tagName, 'to:', newText);
             element.textContent = newText;
+            updatedCount++;
+            console.log(`Updated ${element.tagName}: "${newText}"`);
         }
     });
+    console.log(`Updated ${updatedCount} text elements`);
     
     // Update placeholders
     const placeholders = document.querySelectorAll('[data-tr-placeholder], [data-en-placeholder]');
     console.log('Found placeholders to update:', placeholders.length);
     
+    let placeholderCount = 0;
     placeholders.forEach(element => {
         const newPlaceholder = element.getAttribute(`data-${lang}-placeholder`);
         if (newPlaceholder) {
-            console.log('Updating placeholder:', element.tagName, 'to:', newPlaceholder);
             element.placeholder = newPlaceholder;
+            placeholderCount++;
+            console.log(`Updated placeholder: "${newPlaceholder}"`);
         }
     });
+    console.log(`Updated ${placeholderCount} placeholders`);
     
     // Update language buttons
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -276,37 +282,50 @@ function changeLanguage(lang) {
     // Update HTML lang attribute
     document.documentElement.lang = lang;
     
-    console.log('Language change completed');
+    currentLanguage = lang;
+    console.log('=== LANGUAGE CHANGE COMPLETED ===');
 }
 
-// Simple language switcher - works immediately
-function initLanguageSwitcher() {
-    console.log('Initializing language switcher...');
+// Direct button click handlers
+function setupLanguageButtons() {
+    console.log('Setting up language buttons...');
     
-    const langButtons = document.querySelectorAll('.lang-btn');
-    console.log('Found language buttons:', langButtons.length);
+    const trButton = document.querySelector('.lang-btn[data-lang="tr"]');
+    const enButton = document.querySelector('.lang-btn[data-lang="en"]');
     
-    langButtons.forEach(btn => {
-        console.log('Adding click listener to button:', btn.textContent);
-        btn.onclick = function(e) {
+    if (trButton) {
+        console.log('Found TR button');
+        trButton.addEventListener('click', function(e) {
             e.preventDefault();
-            e.stopPropagation();
-            const lang = this.getAttribute('data-lang');
-            console.log('Button clicked:', lang);
-            changeLanguage(lang);
-            return false;
-        };
-    });
+            console.log('TR button clicked!');
+            changeLanguage('tr');
+        });
+    }
+    
+    if (enButton) {
+        console.log('Found EN button');
+        enButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('EN button clicked!');
+            changeLanguage('en');
+        });
+    }
+    
+    console.log('Language buttons setup complete');
 }
 
-// Initialize immediately
-initLanguageSwitcher();
+// Initialize multiple times to ensure it works
+setupLanguageButtons();
 
-// Also initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
+// Also setup when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupLanguageButtons);
+} else {
+    setupLanguageButtons();
+}
 
-// Also initialize when window loads
-window.addEventListener('load', initLanguageSwitcher);
+// Also setup when window loads
+window.addEventListener('load', setupLanguageButtons);
 
 // Counter animation for stats
 function animateCounter(element, target, duration = 2000) {
