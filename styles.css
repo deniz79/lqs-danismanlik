@@ -42,20 +42,6 @@ body {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 15px;
-}
-
-.logo-image {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(37, 99, 235, 0.3));
-    transition: all 0.3s ease;
-}
-
-.logo-image:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 6px 12px rgba(37, 99, 235, 0.5));
 }
 
 .nav-logo h2 {
@@ -879,10 +865,7 @@ body {
         display: flex;
     }
     
-    .logo-image {
-        width: 25px;
-        height: 25px;
-    }
+
     
     .nav-logo h2 {
         font-size: 1.5rem;
@@ -962,10 +945,7 @@ body {
         font-size: 2rem;
     }
     
-    .logo-image {
-        width: 20px;
-        height: 20px;
-    }
+
     
     .nav-logo h2 {
         font-size: 1.3rem;
