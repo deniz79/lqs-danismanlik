@@ -271,11 +271,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const langButtons = document.querySelectorAll('.lang-btn');
     
     langButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
             const lang = btn.getAttribute('data-lang');
+            console.log('Language button clicked:', lang); // Debug log
             changeLanguage(lang);
         });
     });
+    
+    // Also add event listeners immediately if DOM is already loaded
+    if (document.readyState === 'loading') {
+        // DOM is still loading, wait for DOMContentLoaded
+    } else {
+        // DOM is already loaded, add listeners immediately
+        const langButtons = document.querySelectorAll('.lang-btn');
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = btn.getAttribute('data-lang');
+                console.log('Language button clicked (immediate):', lang); // Debug log
+                changeLanguage(lang);
+            });
+        });
+    }
 });
 
 // Counter animation for stats
