@@ -52,17 +52,27 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://dnalqs.com/en/blog.html"/>
     </url>
     
-    <!-- Mehmet Deniz Yetik -->
+    <!-- Erdal Yetik Blog Post -->
     <url>
-        <loc>https://dnalqs.com/#contact</loc>
+        <loc>https://dnalqs.com/blog/erdal-yetik-kalite-sistem-muduru.html</loc>
         <lastmod>2024-12-19</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="tr" href="https://dnalqs.com/#contact"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://dnalqs.com/en/#contact"/>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://dnalqs.com/blog/erdal-yetik-kalite-sistem-muduru.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://dnalqs.com/en/blog/erdal-yetik-kalite-sistem-muduru.html"/>
     </url>
     
-    <!-- Erdal Yetik -->
+    <!-- Erdal Yetik - Ana Sayfa -->
+    <url>
+        <loc>https://dnalqs.com/#team</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://dnalqs.com/#team"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://dnalqs.com/en/#team"/>
+    </url>
+    
+    <!-- Erdal Yetik - İletişim -->
     <url>
         <loc>https://dnalqs.com/#contact</loc>
         <lastmod>2024-12-19</lastmod>
