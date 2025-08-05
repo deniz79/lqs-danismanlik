@@ -42,6 +42,16 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://dnalqs.com/en/sustainability-consulting.html"/>
     </url>
     
+    <!-- Blog -->
+    <url>
+        <loc>https://dnalqs.com/blog.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://dnalqs.com/blog.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://dnalqs.com/en/blog.html"/>
+    </url>
+    
     <!-- Mehmet Deniz Yetik -->
     <url>
         <loc>https://dnalqs.com/#contact</loc>

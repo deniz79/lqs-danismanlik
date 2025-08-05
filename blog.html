@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - DNA LQS Danışmanlık | Lean, Quality, Sustainability</title>
+    <meta name="description" content="Lean, Quality ve Sustainability alanlarında uzman blog yazıları. İşletme dönüşümü, süreç iyileştirme ve kalite yönetimi hakkında değerli içerikler.">
+    <meta name="keywords" content="lean blog, quality blog, sustainability blog, işletme danışmanlığı blog, süreç iyileştirme, mehmet deniz yetik">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js"></script>
+    <style>
+        .blog-hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+        
+        .blog-excerpt {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+        
+        .read-more {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: #1d4ed8;
+        }
+        
+        .blog-categories {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-tag {
+            background: #e5e7eb;
+            color: #374151;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h2>DNA LQS</h2>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Ana Sayfa</a></li>
+                <li><a href="index.html#services">Hizmetler</a></li>
+                <li><a href="index.html#about">Hakkımızda</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">İletişim</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="tr" onclick="changeLanguage('tr')">
+                    <span class="lang-text">TÜRKÇE</span>
+                    <span class="lang-flag">🇹🇷</span>
+                </button>
+                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">
+                    <span class="lang-text">ENGLISH</span>
+                    <span class="lang-flag">🇺🇸</span>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1 data-tr="Blog" data-en="Blog">Blog</h1>
+            <p data-tr="Lean, Quality ve Sustainability alanlarında uzman içerikler" data-en="Expert content in Lean, Quality and Sustainability areas">Lean, Quality ve Sustainability alanlarında uzman içerikler</p>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-posts">
+        <div class="container">
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-categories">
+                            <span class="category-tag" data-tr="Lean" data-en="Lean">Lean</span>
+                            <span class="category-tag" data-tr="Danışmanlık" data-en="Consulting">Danışmanlık</span>
+                        </div>
+                        <h3 class="blog-title" data-tr="Lean Danışmanlığı Nedir?" data-en="What is Lean Consulting?">Lean Danışmanlığı Nedir?</h3>
+                        <p class="blog-excerpt" data-tr="Lean metodolojisi ile işletmenizde israfı azaltın, verimliliği artırın ve süreçlerinizi optimize edin. Modern iş dünyasında rekabet avantajı elde etmek için Lean prensiplerini uygulayın." data-en="Reduce waste in your business, increase efficiency and optimize your processes with Lean methodology. Apply Lean principles to gain competitive advantage in the modern business world.">
+                            Lean metodolojisi ile işletmenizde israfı azaltın, verimliliği artırın ve süreçlerinizi optimize edin. Modern iş dünyasında rekabet avantajı elde etmek için Lean prensiplerini uygulayın.
+                        </p>
+                        <div class="blog-meta">
+                            <span data-tr="5 dakika okuma" data-en="5 min read">5 dakika okuma</span>
+                            <a href="blog/lean-danismanligi-nedir.html" class="read-more" data-tr="Devamını Oku" data-en="Read More">Devamını Oku</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-categories">
+                            <span class="category-tag" data-tr="Quality" data-en="Quality">Quality</span>
+                            <span class="category-tag" data-tr="ISO 9001" data-en="ISO 9001">ISO 9001</span>
+                        </div>
+                        <h3 class="blog-title" data-tr="ISO 9001 Faydaları ve Uygulama Süreci" data-en="ISO 9001 Benefits and Implementation Process">ISO 9001 Faydaları ve Uygulama Süreci</h3>
+                        <p class="blog-excerpt" data-tr="ISO 9001 Kalite Yönetim Sistemi ile işletmenizin kalite süreçlerini standartlaştırın ve sürekli iyileştirme kültürü oluşturun. Müşteri memnuniyetini en üst seviyeye çıkarın." data-en="Standardize your business's quality processes with the ISO 9001 Quality Management System and create a culture of continuous improvement. Maximize customer satisfaction.">
+                            ISO 9001 Kalite Yönetim Sistemi ile işletmenizin kalite süreçlerini standartlaştırın ve sürekli iyileştirme kültürü oluşturun. Müşteri memnuniyetini en üst seviyeye çıkarın.
+                        </p>
+                        <div class="blog-meta">
+                            <span data-tr="7 dakika okuma" data-en="7 min read">7 dakika okuma</span>
+                            <a href="blog/iso-9001-faydalari.html" class="read-more" data-tr="Devamını Oku" data-en="Read More">Devamını Oku</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-categories">
+                            <span class="category-tag" data-tr="Sustainability" data-en="Sustainability">Sustainability</span>
+                            <span class="category-tag" data-tr="ESG" data-en="ESG">ESG</span>
+                        </div>
+                        <h3 class="blog-title" data-tr="Sürdürülebilir İş Modelleri" data-en="Sustainable Business Models">Sürdürülebilir İş Modelleri</h3>
+                        <p class="blog-excerpt" data-tr="Sürdürülebilir iş modelleri geliştirin ve çevresel sorumluluğunuzu yerine getirin. ESG stratejileri ile gelecek nesillere değer katın." data-en="Develop sustainable business models and fulfill your environmental responsibility. Add value for future generations with ESG strategies.">
+                            Sürdürülebilir iş modelleri geliştirin ve çevresel sorumluluğunuzu yerine getirin. ESG stratejileri ile gelecek nesillere değer katın.
+                        </p>
+                        <div class="blog-meta">
+                            <span data-tr="6 dakika okuma" data-en="6 min read">6 dakika okuma</span>
+                            <a href="blog/surdurulebilir-is-modelleri.html" class="read-more" data-tr="Devamını Oku" data-en="Read More">Devamını Oku</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-sort-numeric-up"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-categories">
+                            <span class="category-tag" data-tr="5S" data-en="5S">5S</span>
+                            <span class="category-tag" data-tr="Metodoloji" data-en="Methodology">Metodoloji</span>
+                        </div>
+                        <h3 class="blog-title" data-tr="5S Metodolojisi ve Uygulama" data-en="5S Methodology and Implementation">5S Metodolojisi ve Uygulama</h3>
+                        <p class="blog-excerpt" data-tr="5S metodolojisi ile iş yerinizi düzenli, temiz ve verimli hale getirin. Çalışma alanlarınızı optimize edin ve güvenliği artırın." data-en="Make your workplace organized, clean and efficient with the 5S methodology. Optimize your work areas and increase safety.">
+                            5S metodolojisi ile iş yerinizi düzenli, temiz ve verimli hale getirin. Çalışma alanlarınızı optimize edin ve güvenliği artırın.
+                        </p>
+                        <div class="blog-meta">
+                            <span data-tr="8 dakika okuma" data-en="8 min read">8 dakika okuma</span>
+                            <a href="blog/5s-metodolojisi.html" class="read-more" data-tr="Devamını Oku" data-en="Read More">Devamını Oku</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DNA LQS Danışmanlık</h3>
+                    <p data-tr="Lean, Quality, Sustainability alanlarında uzman danışmanlık hizmetleri." data-en="Expert consulting services in Lean, Quality, and Sustainability areas.">Lean, Quality, Sustainability alanlarında uzman danışmanlık hizmetleri.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-tr="Hizmetler" data-en="Services">Hizmetler</h4>
+                    <ul>
+                        <li><a href="lean-danismanlik.html" data-tr="Lean Danışmanlığı" data-en="Lean Consulting">Lean Danışmanlığı</a></li>
+                        <li><a href="quality-danismanlik.html" data-tr="Quality Danışmanlığı" data-en="Quality Consulting">Quality Danışmanlığı</a></li>
+                        <li><a href="sustainability-danismanlik.html" data-tr="Sustainability Danışmanlığı" data-en="Sustainability Consulting">Sustainability Danışmanlığı</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-tr="İletişim" data-en="Contact">İletişim</h4>
+                    <ul>
+                        <li>+90 532 432 71 95</li>
+                        <li>info@dnalqs.com</li>
+                        <li>Erdal Yetik</li>
+                        <li>Mehmet Deniz Yetik site tasarımcısı</li>
+                        <li>Vera house2 B2 D7 Nazlı sok, Şirintepe İzmit Kocaeli 41100 Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DNA LQS Danışmanlık. <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved.">Tüm hakları saklıdır.</span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
