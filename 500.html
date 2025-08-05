@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunucu Hatası - DNA LQS Danışmanlık</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .error-content {
+            max-width: 600px;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: #dc2626;
+            margin: 0;
+            line-height: 1;
+        }
+        .error-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 1rem 0;
+        }
+        .error-description {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+        .dna-icon {
+            font-size: 4rem;
+            color: #dc2626;
+            margin-bottom: 1rem;
+        }
+        .contact-info {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 0.5rem;
+        }
+        .contact-info h3 {
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        .contact-info p {
+            color: #6b7280;
+            margin: 0.25rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-content">
+            <div class="dna-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h1 class="error-code">500</h1>
+            <h2 class="error-title">Sunucu Hatası</h2>
+            <p class="error-description">
+                Sunucumuzda geçici bir sorun oluştu. Lütfen birkaç dakika sonra tekrar deneyin. 
+                Sorun devam ederse bizimle iletişime geçebilirsiniz.
+            </p>
+            <div class="error-actions">
+                <a href="/" class="btn-primary">
+                    <i class="fas fa-home"></i> Ana Sayfa
+                </a>
+                <a href="javascript:location.reload()" class="btn-secondary">
+                    <i class="fas fa-redo"></i> Tekrar Dene
+                </a>
+            </div>
+            <div class="contact-info">
+                <h3>İletişim Bilgileri</h3>
+                <p><i class="fas fa-phone"></i> +90 532 432 71 95</p>
+                <p><i class="fas fa-envelope"></i> info@dnalqs.com</p>
+                <p><i class="fas fa-user"></i> Erdal Yetik</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
