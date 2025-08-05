@@ -92,4 +92,24 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://dnalqs.com/en/#contact"/>
     </url>
     
+    <!-- Erdal Yetik CV -->
+    <url>
+        <loc>https://dnalqs.com/cv/erdal-yetik.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://dnalqs.com/cv/erdal-yetik.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://dnalqs.com/cv/erdal-yetik.html"/>
+    </url>
+    
+    <!-- Mehmet Deniz Yetik CV -->
+    <url>
+        <loc>https://dnalqs.com/cv/mehmet-deniz-yetik.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://dnalqs.com/cv/mehmet-deniz-yetik.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://dnalqs.com/cv/mehmet-deniz-yetik.html"/>
+    </url>
+    
 </urlset> 
