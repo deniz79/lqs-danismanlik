@@ -1020,4 +1020,168 @@ body {
     .breadcrumb {
         font-size: 0.9rem;
     }
+}
+
+/* Team Section */
+.team {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.team-member {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.member-photo {
+    height: 200px;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+}
+
+.member-info {
+    padding: 2rem;
+}
+
+.member-info h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.member-info h4 {
+    font-size: 1.2rem;
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.experience {
+    color: #6b7280;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.expertise h5,
+.experience-details h5,
+.education h5,
+.volunteer h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+.expertise-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.expertise-tags span {
+    background: #e5e7eb;
+    color: #374151;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.expertise-tags span:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.experience-item,
+.education-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f9fafb;
+    border-radius: 10px;
+    border-left: 4px solid #2563eb;
+}
+
+.experience-item h6,
+.education-item h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.experience-item p,
+.education-item p {
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.duration,
+.location,
+.gpa {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.experience-item ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.experience-item li {
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+}
+
+.volunteer ul {
+    padding-left: 1.5rem;
+}
+
+.volunteer li {
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        margin: 0 1rem;
+    }
+    
+    .member-info {
+        padding: 1.5rem;
+    }
+    
+    .expertise-tags {
+        gap: 0.25rem;
+    }
+    
+    .expertise-tags span {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.75rem;
+    }
 } 
