@@ -67,6 +67,8 @@ DNA LQS Lean Danışmanlık - İzmit Kocaeli.
 - #5SUygulamaları
 - #ISO9001
 - #ESG
+- #ErdalYetik
+- #ErdalYetikDanışman
 
 ## 🚀 Hemen Yapılacaklar:
 
@@ -79,11 +81,11 @@ DNA LQS Lean Danışmanlık - İzmit Kocaeli.
 ```
 DNA LQS Danışmanlık olarak İzmit Kocaeli bölgesinde hizmet veriyoruz! 🚀
 
-Lean, Quality ve Sustainability alanlarında uzman danışmanlık hizmetlerimizle işletmenizi dönüştürün.
+Erdal Yetik - Lean, Quality ve Sustainability alanlarında uzman danışmanlık hizmetlerimizle işletmenizi dönüştürün.
 
 DNA LQS farkı ile yanınızdayız!
 
-#DNALQS #LeanDanışmanlık #QualityDanışmanlık #SustainabilityDanışmanlık #İzmit #Kocaeli
+#DNALQS #ErdalYetik #LeanDanışmanlık #QualityDanışmanlık #SustainabilityDanışmanlık #İzmit #Kocaeli
 ```
 
 ### **3. Haftalık Plan:**
