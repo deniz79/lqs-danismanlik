@@ -327,26 +327,33 @@ function checkCollisions() {
                 const rect1 = card1.getBoundingClientRect();
                 const rect2 = card2.getBoundingClientRect();
                 
-                // Check if cards are colliding
-                if (rect1.left < rect2.right && 
-                    rect1.right > rect2.left && 
-                    rect1.top < rect2.bottom && 
-                    rect1.bottom > rect2.top) {
+                // Check if cards are colliding (with some tolerance)
+                const tolerance = 20;
+                if (rect1.left < rect2.right - tolerance && 
+                    rect1.right > rect2.left + tolerance && 
+                    rect1.top < rect2.bottom - tolerance && 
+                    rect1.bottom > rect2.top + tolerance) {
                     
-                    // Add collision effect
+                    // Add collision effect with sound-like visual feedback
                     card1.classList.add('collision');
                     card2.classList.add('collision');
                     
-                    // Remove collision class after animation
+                    // Add a brief glow effect
+                    card1.style.boxShadow = '0 0 30px rgba(255, 255, 255, 0.8)';
+                    card2.style.boxShadow = '0 0 30px rgba(255, 255, 255, 0.8)';
+                    
+                    // Remove collision class and glow after animation
                     setTimeout(() => {
                         card1.classList.remove('collision');
                         card2.classList.remove('collision');
-                    }, 600);
+                        card1.style.boxShadow = '';
+                        card2.style.boxShadow = '';
+                    }, 800);
                 }
             }
         });
     });
 }
 
-// Check for collisions periodically
-setInterval(checkCollisions, 2000); 
+// Check for collisions more frequently
+setInterval(checkCollisions, 500); 
