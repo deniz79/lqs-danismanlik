@@ -238,38 +238,27 @@ document.addEventListener('DOMContentLoaded', () => {
 let currentLanguage = 'tr';
 
 function changeLanguage(lang) {
-    console.log('=== LANGUAGE CHANGE START ===');
     console.log('Changing language to:', lang);
     
     // Update all elements with data attributes
     const elements = document.querySelectorAll('[data-tr], [data-en]');
     console.log('Found elements to update:', elements.length);
     
-    let updatedCount = 0;
     elements.forEach(element => {
         const newText = element.getAttribute(`data-${lang}`);
         if (newText) {
             element.textContent = newText;
-            updatedCount++;
-            console.log(`Updated ${element.tagName}: "${newText}"`);
         }
     });
-    console.log(`Updated ${updatedCount} text elements`);
     
     // Update placeholders
     const placeholders = document.querySelectorAll('[data-tr-placeholder], [data-en-placeholder]');
-    console.log('Found placeholders to update:', placeholders.length);
-    
-    let placeholderCount = 0;
     placeholders.forEach(element => {
         const newPlaceholder = element.getAttribute(`data-${lang}-placeholder`);
         if (newPlaceholder) {
             element.placeholder = newPlaceholder;
-            placeholderCount++;
-            console.log(`Updated placeholder: "${newPlaceholder}"`);
         }
     });
-    console.log(`Updated ${placeholderCount} placeholders`);
     
     // Update language buttons
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -283,57 +272,13 @@ function changeLanguage(lang) {
     document.documentElement.lang = lang;
     
     currentLanguage = lang;
-    console.log('=== LANGUAGE CHANGE COMPLETED ===');
+    console.log('Language changed to:', lang);
 }
 
-// Simple and reliable language switcher
-function initLanguageSwitcher() {
-    console.log('=== INITIALIZING LANGUAGE SWITCHER ===');
-    
-    const buttons = document.querySelectorAll('.lang-btn');
-    console.log('Found buttons:', buttons.length);
-    
-    buttons.forEach(button => {
-        console.log('Setting up button:', button.textContent.trim());
-        
-        // Remove any existing listeners
-        button.removeEventListener('click', button._languageClickHandler);
-        
-        // Create new handler
-        button._languageClickHandler = function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const lang = this.getAttribute('data-lang');
-            console.log('Button clicked:', lang);
-            
-            // Add visual feedback
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-            
-            changeLanguage(lang);
-        };
-        
-        // Add the listener
-        button.addEventListener('click', button._languageClickHandler);
-    });
-    
-    console.log('=== LANGUAGE SWITCHER INITIALIZED ===');
-}
-
-// Initialize immediately
-initLanguageSwitcher();
-
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
-
-// Initialize when window loads
-window.addEventListener('load', initLanguageSwitcher);
-
-// Initialize after a short delay to ensure everything is loaded
-setTimeout(initLanguageSwitcher, 100);
+// Initialize language switcher
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Language switcher initialized');
+});
 
 // Counter animation for stats
 function animateCounter(element, target, duration = 2000) {
