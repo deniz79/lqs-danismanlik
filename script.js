@@ -317,43 +317,133 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Floating card collision detection
-function checkCollisions() {
-    const cards = document.querySelectorAll('.floating-card');
+// Floating card movement and collision system
+class FloatingCard {
+    constructor(element) {
+        this.element = element;
+        this.x = Math.random() * (window.innerWidth - 200);
+        this.y = Math.random() * (window.innerHeight * 0.6);
+        this.vx = (Math.random() - 0.5) * 2; // velocity x
+        this.vy = (Math.random() - 0.5) * 2; // velocity y
+        this.width = 140;
+        this.height = 140;
+        this.bounds = {
+            minX: 0,
+            maxX: window.innerWidth - this.width,
+            minY: 100, // Below navbar
+            maxY: window.innerHeight * 0.6 - this.height
+        };
+        
+        this.updatePosition();
+    }
     
-    cards.forEach((card1, index1) => {
-        cards.forEach((card2, index2) => {
-            if (index1 !== index2) {
-                const rect1 = card1.getBoundingClientRect();
-                const rect2 = card2.getBoundingClientRect();
-                
-                // Check if cards are colliding (with some tolerance)
-                const tolerance = 20;
-                if (rect1.left < rect2.right - tolerance && 
-                    rect1.right > rect2.left + tolerance && 
-                    rect1.top < rect2.bottom - tolerance && 
-                    rect1.bottom > rect2.top + tolerance) {
-                    
-                    // Add collision effect with sound-like visual feedback
-                    card1.classList.add('collision');
-                    card2.classList.add('collision');
-                    
-                    // Add a brief glow effect
-                    card1.style.boxShadow = '0 0 30px rgba(255, 255, 255, 0.8)';
-                    card2.style.boxShadow = '0 0 30px rgba(255, 255, 255, 0.8)';
-                    
-                    // Remove collision class and glow after animation
-                    setTimeout(() => {
-                        card1.classList.remove('collision');
-                        card2.classList.remove('collision');
-                        card1.style.boxShadow = '';
-                        card2.style.boxShadow = '';
-                    }, 800);
-                }
-            }
-        });
-    });
+    updatePosition() {
+        // Update position based on velocity
+        this.x += this.vx;
+        this.y += this.vy;
+        
+        // Bounce off boundaries
+        if (this.x <= this.bounds.minX || this.x >= this.bounds.maxX) {
+            this.vx = -this.vx;
+            this.x = Math.max(this.bounds.minX, Math.min(this.bounds.maxX, this.x));
+        }
+        
+        if (this.y <= this.bounds.minY || this.y >= this.bounds.maxY) {
+            this.vy = -this.vy;
+            this.y = Math.max(this.bounds.minY, Math.min(this.bounds.maxY, this.y));
+        }
+        
+        // Apply position to element
+        this.element.style.left = this.x + 'px';
+        this.element.style.top = this.y + 'px';
+    }
+    
+    getBounds() {
+        return {
+            left: this.x,
+            right: this.x + this.width,
+            top: this.y,
+            bottom: this.y + this.height
+        };
+    }
 }
 
-// Check for collisions more frequently
-setInterval(checkCollisions, 500); 
+// Initialize floating cards
+let floatingCards = [];
+
+function initFloatingCards() {
+    const cards = document.querySelectorAll('.floating-card');
+    floatingCards = Array.from(cards).map(card => new FloatingCard(card));
+}
+
+// Animation loop
+function animateCards() {
+    floatingCards.forEach(card => {
+        card.updatePosition();
+    });
+    
+    // Check for collisions
+    checkCollisions();
+    
+    requestAnimationFrame(animateCards);
+}
+
+// Enhanced collision detection
+function checkCollisions() {
+    for (let i = 0; i < floatingCards.length; i++) {
+        for (let j = i + 1; j < floatingCards.length; j++) {
+            const card1 = floatingCards[i];
+            const card2 = floatingCards[j];
+            const bounds1 = card1.getBounds();
+            const bounds2 = card2.getBounds();
+            
+            // Check collision with tolerance
+            const tolerance = 30;
+            if (bounds1.left < bounds2.right - tolerance && 
+                bounds1.right > bounds2.left + tolerance && 
+                bounds1.top < bounds2.bottom - tolerance && 
+                bounds1.bottom > bounds2.top + tolerance) {
+                
+                // Collision detected - reverse velocities
+                card1.vx = -card1.vx;
+                card1.vy = -card1.vy;
+                card2.vx = -card2.vx;
+                card2.vy = -card2.vy;
+                
+                // Add visual collision effect
+                card1.element.classList.add('collision');
+                card2.element.classList.add('collision');
+                
+                // Add glow effect
+                card1.element.style.boxShadow = '0 0 40px rgba(255, 255, 255, 0.9)';
+                card2.element.style.boxShadow = '0 0 40px rgba(255, 255, 255, 0.9)';
+                
+                // Remove effects after animation
+                setTimeout(() => {
+                    card1.element.classList.remove('collision');
+                    card2.element.classList.remove('collision');
+                    card1.element.style.boxShadow = '';
+                    card2.element.style.boxShadow = '';
+                }, 800);
+            }
+        }
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initFloatingCards();
+    animateCards();
+});
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    floatingCards.forEach(card => {
+        card.bounds = {
+            minX: 0,
+            maxX: window.innerWidth - card.width,
+            minY: 100,
+            maxY: window.innerHeight * 0.6 - card.height
+        };
+    });
+}); 

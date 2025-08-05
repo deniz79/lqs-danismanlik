@@ -219,8 +219,10 @@ body {
 
 .hero-visual {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    overflow: hidden;
 }
 
 .floating-card {
@@ -232,7 +234,6 @@ body {
     padding: 2rem;
     text-align: center;
     color: white;
-    animation: float 8s ease-in-out infinite;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
     cursor: pointer;
@@ -242,6 +243,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* Remove fixed animation, will be controlled by JavaScript */
 }
 
 .floating-card:hover {
@@ -254,53 +256,7 @@ body {
     animation: collision 0.6s ease-out;
 }
 
-.floating-card:nth-child(1) {
-    top: 10%;
-    left: 15%;
-    animation-delay: 0s;
-}
-
-.floating-card:nth-child(2) {
-    top: 25%;
-    right: 20%;
-    animation-delay: 1s;
-}
-
-.floating-card:nth-child(3) {
-    bottom: 20%;
-    left: 25%;
-    animation-delay: 2s;
-}
-
-.floating-card:nth-child(4) {
-    top: 60%;
-    right: 15%;
-    animation-delay: 3s;
-}
-
-.floating-card:nth-child(5) {
-    bottom: 35%;
-    right: 35%;
-    animation-delay: 4s;
-}
-
-.floating-card:nth-child(6) {
-    top: 45%;
-    left: 5%;
-    animation-delay: 5s;
-}
-
-.floating-card:nth-child(7) {
-    bottom: 10%;
-    right: 45%;
-    animation-delay: 6s;
-}
-
-.floating-card:nth-child(8) {
-    top: 75%;
-    left: 40%;
-    animation-delay: 7s;
-}
+/* Card positions will be controlled by JavaScript for dynamic movement */
 
 .floating-card i {
     font-size: 2.5rem;
@@ -325,17 +281,21 @@ body {
         transform: scale(1) rotate(0deg);
         background: rgba(255, 255, 255, 0.15);
     }
-    25% { 
-        transform: scale(1.3) rotate(8deg);
-        background: rgba(255, 255, 255, 0.4);
+    15% { 
+        transform: scale(1.4) rotate(10deg);
+        background: rgba(255, 255, 255, 0.5);
+    }
+    30% { 
+        transform: scale(0.7) rotate(-8deg);
+        background: rgba(255, 255, 255, 0.7);
     }
     50% { 
-        transform: scale(0.8) rotate(-5deg);
-        background: rgba(255, 255, 255, 0.6);
+        transform: scale(1.3) rotate(5deg);
+        background: rgba(255, 255, 255, 0.4);
     }
-    75% { 
-        transform: scale(1.2) rotate(3deg);
-        background: rgba(255, 255, 255, 0.3);
+    70% { 
+        transform: scale(0.9) rotate(-3deg);
+        background: rgba(255, 255, 255, 0.6);
     }
     100% { 
         transform: scale(1) rotate(0deg);
