@@ -315,4 +315,38 @@ document.addEventListener('DOMContentLoaded', () => {
     if (statsSection) {
         statsObserver.observe(statsSection);
     }
-}); 
+});
+
+// Floating card collision detection
+function checkCollisions() {
+    const cards = document.querySelectorAll('.floating-card');
+    
+    cards.forEach((card1, index1) => {
+        cards.forEach((card2, index2) => {
+            if (index1 !== index2) {
+                const rect1 = card1.getBoundingClientRect();
+                const rect2 = card2.getBoundingClientRect();
+                
+                // Check if cards are colliding
+                if (rect1.left < rect2.right && 
+                    rect1.right > rect2.left && 
+                    rect1.top < rect2.bottom && 
+                    rect1.bottom > rect2.top) {
+                    
+                    // Add collision effect
+                    card1.classList.add('collision');
+                    card2.classList.add('collision');
+                    
+                    // Remove collision class after animation
+                    setTimeout(() => {
+                        card1.classList.remove('collision');
+                        card2.classList.remove('collision');
+                    }, 600);
+                }
+            }
+        });
+    });
+}
+
+// Check for collisions periodically
+setInterval(checkCollisions, 2000); 
