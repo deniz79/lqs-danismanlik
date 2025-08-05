@@ -332,15 +332,15 @@ class FloatingCard {
         this.vx = this.getRandomVelocity();
         this.vy = this.getRandomVelocity();
         
-        this.width = 160;
-        this.height = 160;
+        this.width = 120;
+        this.height = 120;
         
         // Set bounds based on screen size
         this.bounds = {
-            minX: 50,
-            maxX: window.innerWidth - this.width - 50,
-            minY: 100,
-            maxY: window.innerHeight * 0.7 - this.height
+            minX: 30,
+            maxX: window.innerWidth - this.width - 30,
+            minY: 80,
+            maxY: window.innerHeight * 0.6 - this.height
         };
         
         // Start animation after a delay
