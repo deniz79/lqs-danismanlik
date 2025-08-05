@@ -13,6 +13,7 @@ Disallow: /private/
 
 # Allow important files
 Allow: /index.html
+Allow: /team.html
 Allow: /lean-danismanlik.html
 Allow: /quality-danismanlik.html
 Allow: /sustainability-danismanlik.html
