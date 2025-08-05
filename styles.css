@@ -260,49 +260,25 @@ body {
     z-index: 1000;
 }
 
-/* Initial positions for each card - better spacing */
+/* Fixed positions for each card - no overlap */
 .floating-card[data-position="top-left"] {
-    top: 5%;
-    left: 5%;
+    top: 10%;
+    left: 10%;
 }
 
 .floating-card[data-position="top-right"] {
-    top: 8%;
-    right: 8%;
+    top: 10%;
+    right: 10%;
 }
 
 .floating-card[data-position="bottom-left"] {
-    bottom: 8%;
-    left: 5%;
+    bottom: 10%;
+    left: 10%;
 }
 
 .floating-card[data-position="bottom-right"] {
-    bottom: 5%;
-    right: 5%;
-}
-
-.floating-card[data-position="center-left"] {
-    top: 50%;
-    left: 3%;
-    transform: translateY(-50%);
-}
-
-.floating-card[data-position="center-right"] {
-    top: 50%;
-    right: 3%;
-    transform: translateY(-50%);
-}
-
-.floating-card[data-position="top-center"] {
-    top: 3%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.floating-card[data-position="bottom-center"] {
-    bottom: 3%;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 10%;
+    right: 10%;
 }
 
 .floating-card i {
