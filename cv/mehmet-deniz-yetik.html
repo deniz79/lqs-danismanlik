@@ -97,24 +97,33 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="../index.html">
-                    <span>DNA LQS</span>
-                </a>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DNA LQS</h2>
             </div>
-            <div class="nav-menu">
-                <a href="../index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
-                <a href="../lean-danismanlik.html" data-tr="Lean Danışmanlık" data-en="Lean Consulting">Lean Danışmanlık</a>
-                <a href="../quality-danismanlik.html" data-tr="Kalite Danışmanlık" data-en="Quality Consulting">Kalite Danışmanlık</a>
-                <a href="../sustainability-danismanlik.html" data-tr="Sürdürülebilirlik" data-en="Sustainability">Sürdürülebilirlik</a>
-                <a href="../blog.html" data-tr="Blog" data-en="Blog">Blog</a>
-                <a href="../team.html" data-tr="Çalışanlarımız" data-en="Our Team">Çalışanlarımız</a>
-                <a href="../index.html#contact" data-tr="İletişim" data-en="Contact">İletişim</a>
-            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
+                <li><a href="../lean-danismanlik.html" data-tr="Lean Danışmanlık" data-en="Lean Consulting">Lean Danışmanlık</a></li>
+                <li><a href="../quality-danismanlik.html" data-tr="Kalite Danışmanlık" data-en="Quality Consulting">Kalite Danışmanlık</a></li>
+                <li><a href="../sustainability-danismanlik.html" data-tr="Sürdürülebilirlik" data-en="Sustainability">Sürdürülebilirlik</a></li>
+                <li><a href="../blog.html" data-tr="Blog" data-en="Blog">Blog</a></li>
+                <li><a href="../team.html" data-tr="Çalışanlarımız" data-en="Our Team">Çalışanlarımız</a></li>
+                <li><a href="../index.html#contact" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+            </ul>
             <div class="language-switcher">
-                <button onclick="changeLanguage('tr')" class="lang-btn active">TR</button>
-                <button onclick="changeLanguage('en')" class="lang-btn">EN</button>
+                <button class="lang-btn active" data-lang="tr" onclick="changeLanguage('tr')">
+                    <span class="lang-text">TÜRKÇE</span>
+                    <span class="lang-flag">🇹🇷</span>
+                </button>
+                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">
+                    <span class="lang-text">ENGLISH</span>
+                    <span class="lang-flag">🇺🇸</span>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
@@ -615,6 +624,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="../script.js"></script>
     <script src="../script.js"></script>
 </body>
 </html> 
