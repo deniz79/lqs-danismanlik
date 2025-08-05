@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -23,6 +24,16 @@
                 <li><a href="index.html#about">Hakkımızda</a></li>
                 <li><a href="index.html#contact">İletişim</a></li>
             </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="tr" onclick="changeLanguage('tr')">
+                    <span class="lang-text">TÜRKÇE</span>
+                    <span class="lang-flag">🇹🇷</span>
+                </button>
+                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">
+                    <span class="lang-text">ENGLISH</span>
+                    <span class="lang-flag">🇺🇸</span>
+                </button>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
