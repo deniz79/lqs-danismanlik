@@ -247,7 +247,15 @@ function changeLanguage(lang) {
     elements.forEach(element => {
         const newText = element.getAttribute(`data-${lang}`);
         if (newText) {
-            element.textContent = newText;
+            // Preserve HTML content (links, etc.) when switching languages
+            if (element.innerHTML.includes('<a href=')) {
+                // For elements with HTML content, we need to handle them specially
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = newText;
+                element.innerHTML = tempDiv.innerHTML;
+            } else {
+                element.textContent = newText;
+            }
         }
     });
     
