@@ -987,15 +987,23 @@ body {
     }
 
     .floating-card {
-        padding: 1rem;
+        width: 80px;
+        height: 80px;
+        padding: 0.75rem;
     }
 
     .floating-card i {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
     }
 
     .floating-card span {
-        font-size: 1rem;
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+
+    .hero-visual {
+        min-height: 300px;
     }
 
     .language-switcher {
@@ -1215,7 +1223,7 @@ body {
 
 /* Team Page Specific Styles */
 .team-hero {
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
     color: white;
     padding: 5rem 0;
     text-align: center;
