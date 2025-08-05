@@ -319,19 +319,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Floating card movement and collision system
 class FloatingCard {
-    constructor(element) {
+    constructor(element, index) {
         this.element = element;
-        this.x = Math.random() * (window.innerWidth - 200);
-        this.y = Math.random() * (window.innerHeight * 0.6);
-        this.vx = (Math.random() - 0.5) * 2; // velocity x
-        this.vy = (Math.random() - 0.5) * 2; // velocity y
+        this.index = index;
+        
+        // Better initial positioning - spread cards out
+        const cols = 4;
+        const rows = 2;
+        const col = index % cols;
+        const row = Math.floor(index / cols);
+        
+        this.x = (window.innerWidth / cols) * col + 50;
+        this.y = (window.innerHeight * 0.5 / rows) * row + 150;
+        
+        // Slower, more controlled movement
+        this.vx = (Math.random() - 0.5) * 1; // velocity x
+        this.vy = (Math.random() - 0.5) * 1; // velocity y
         this.width = 140;
         this.height = 140;
         this.bounds = {
-            minX: 0,
-            maxX: window.innerWidth - this.width,
-            minY: 100, // Below navbar
-            maxY: window.innerHeight * 0.6 - this.height
+            minX: 50,
+            maxX: window.innerWidth - this.width - 50,
+            minY: 150, // Below navbar
+            maxY: window.innerHeight * 0.5 - this.height
         };
         
         this.updatePosition();
@@ -373,7 +383,8 @@ let floatingCards = [];
 
 function initFloatingCards() {
     const cards = document.querySelectorAll('.floating-card');
-    floatingCards = Array.from(cards).map(card => new FloatingCard(card));
+    floatingCards = Array.from(cards).map((card, index) => new FloatingCard(card, index));
+    console.log('Floating cards initialized:', floatingCards.length);
 }
 
 // Animation loop
@@ -397,26 +408,30 @@ function checkCollisions() {
             const bounds1 = card1.getBounds();
             const bounds2 = card2.getBounds();
             
-            // Check collision with tolerance
-            const tolerance = 30;
+            // Check collision with smaller tolerance
+            const tolerance = 20;
             if (bounds1.left < bounds2.right - tolerance && 
                 bounds1.right > bounds2.left + tolerance && 
                 bounds1.top < bounds2.bottom - tolerance && 
                 bounds1.bottom > bounds2.top + tolerance) {
                 
-                // Collision detected - reverse velocities
-                card1.vx = -card1.vx;
-                card1.vy = -card1.vy;
-                card2.vx = -card2.vx;
-                card2.vy = -card2.vy;
+                // Collision detected - reverse velocities with some randomness
+                card1.vx = -card1.vx * 1.2;
+                card1.vy = -card1.vy * 1.2;
+                card2.vx = -card2.vx * 1.2;
+                card2.vy = -card2.vy * 1.2;
                 
                 // Add visual collision effect
                 card1.element.classList.add('collision');
                 card2.element.classList.add('collision');
                 
-                // Add glow effect
-                card1.element.style.boxShadow = '0 0 40px rgba(255, 255, 255, 0.9)';
-                card2.element.style.boxShadow = '0 0 40px rgba(255, 255, 255, 0.9)';
+                // Add stronger glow effect
+                card1.element.style.boxShadow = '0 0 50px rgba(255, 255, 255, 1)';
+                card2.element.style.boxShadow = '0 0 50px rgba(255, 255, 255, 1)';
+                
+                // Add temporary background change
+                card1.element.style.background = 'rgba(255, 255, 255, 0.4)';
+                card2.element.style.background = 'rgba(255, 255, 255, 0.4)';
                 
                 // Remove effects after animation
                 setTimeout(() => {
@@ -424,7 +439,9 @@ function checkCollisions() {
                     card2.element.classList.remove('collision');
                     card1.element.style.boxShadow = '';
                     card2.element.style.boxShadow = '';
-                }, 800);
+                    card1.element.style.background = '';
+                    card2.element.style.background = '';
+                }, 1000);
             }
         }
     }
