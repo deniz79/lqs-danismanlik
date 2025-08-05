@@ -255,111 +255,51 @@ body {
 }
 
 .floating-card:nth-child(1) {
-    top: 5%;
-    left: 5%;
+    top: 10%;
+    left: 15%;
     animation-delay: 0s;
 }
 
 .floating-card:nth-child(2) {
-    top: 15%;
-    left: 25%;
-    animation-delay: 0.5s;
-}
-
-.floating-card:nth-child(3) {
     top: 25%;
-    left: 45%;
+    right: 20%;
     animation-delay: 1s;
 }
 
-.floating-card:nth-child(4) {
-    top: 10%;
-    right: 10%;
-    animation-delay: 1.5s;
-}
-
-.floating-card:nth-child(5) {
-    top: 30%;
-    right: 25%;
+.floating-card:nth-child(3) {
+    bottom: 20%;
+    left: 25%;
     animation-delay: 2s;
 }
 
-.floating-card:nth-child(6) {
-    top: 50%;
-    right: 5%;
-    animation-delay: 2.5s;
-}
-
-.floating-card:nth-child(7) {
-    bottom: 15%;
-    left: 10%;
+.floating-card:nth-child(4) {
+    top: 60%;
+    right: 15%;
     animation-delay: 3s;
 }
 
-.floating-card:nth-child(8) {
-    bottom: 25%;
-    left: 35%;
-    animation-delay: 3.5s;
-}
-
-.floating-card:nth-child(9) {
+.floating-card:nth-child(5) {
     bottom: 35%;
-    left: 60%;
+    right: 35%;
     animation-delay: 4s;
 }
 
-.floating-card:nth-child(10) {
-    bottom: 10%;
-    right: 20%;
-    animation-delay: 4.5s;
-}
-
-.floating-card:nth-child(11) {
-    bottom: 45%;
-    right: 40%;
+.floating-card:nth-child(6) {
+    top: 45%;
+    left: 5%;
     animation-delay: 5s;
 }
 
-.floating-card:nth-child(12) {
-    top: 70%;
-    left: 15%;
-    animation-delay: 5.5s;
-}
-
-.floating-card:nth-child(13) {
-    top: 80%;
-    left: 50%;
+.floating-card:nth-child(7) {
+    bottom: 10%;
+    right: 45%;
     animation-delay: 6s;
 }
 
-.floating-card:nth-child(14) {
-    top: 60%;
-    right: 35%;
-    animation-delay: 6.5s;
-}
-
-.floating-card:nth-child(15) {
-    bottom: 5%;
-    right: 50%;
+.floating-card:nth-child(8) {
+    top: 75%;
+    left: 40%;
     animation-delay: 7s;
-}
-
-.floating-card:nth-child(16) {
-    top: 40%;
-    left: 70%;
-    animation-delay: 7.5s;
-}
-
-.floating-card:nth-child(17) {
-    bottom: 55%;
-    left: 25%;
-    animation-delay: 8s;
-}
-
-.floating-card:nth-child(18) {
-    top: 85%;
-    right: 15%;
-    animation-delay: 8.5s;
 }
 
 .floating-card i {
