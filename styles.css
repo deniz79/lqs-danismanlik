@@ -1184,4 +1184,64 @@ body {
         font-size: 0.75rem;
         padding: 0.25rem 0.75rem;
     }
+}
+
+/* Team Page Specific Styles */
+.team-hero {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.team-hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.team-hero-content p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.team-members {
+    padding: 5rem 0;
+    background: #f8fafc;
+}
+
+.team-cta {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.team-cta .cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.team-cta .cta-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .team-hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .team-hero-content p {
+        font-size: 1rem;
+    }
+    
+    .team-cta .cta-content h2 {
+        font-size: 2rem;
+    }
 } 

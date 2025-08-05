@@ -52,6 +52,16 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://dnalqs.com/en/blog.html"/>
     </url>
     
+    <!-- Team Page -->
+    <url>
+        <loc>https://dnalqs.com/team.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://dnalqs.com/team.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://dnalqs.com/en/team.html"/>
+    </url>
+    
     <!-- Erdal Yetik Blog Post -->
     <url>
         <loc>https://dnalqs.com/blog/erdal-yetik-kalite-sistem-muduru.html</loc>
