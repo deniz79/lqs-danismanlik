@@ -374,6 +374,38 @@
     </div>
 
     <script>
+        // Admin authentication check
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            const isLoggedIn = localStorage.getItem('adminLoggedIn') === 'true';
+            const loginTime = localStorage.getItem('adminLoginTime');
+            const currentTime = Date.now();
+            
+            // Check if login is still valid (24 hours)
+            const loginValid = loginTime && (currentTime - parseInt(loginTime)) < (24 * 60 * 60 * 1000);
+            
+            if (!isLoggedIn || !loginValid) {
+                // Redirect to login page
+                window.location.href = 'admin-login.html';
+                return;
+            }
+            
+            // Add logout functionality
+            const logoutBtn = document.createElement('button');
+            logoutBtn.className = 'btn-admin btn-danger';
+            logoutBtn.style.position = 'fixed';
+            logoutBtn.style.top = '20px';
+            logoutBtn.style.right = '20px';
+            logoutBtn.style.zIndex = '1000';
+            logoutBtn.innerHTML = '🚪 Çıkış Yap';
+            logoutBtn.onclick = function() {
+                localStorage.removeItem('adminLoggedIn');
+                localStorage.removeItem('adminLoginTime');
+                window.location.href = 'admin-login.html';
+            };
+            document.body.appendChild(logoutBtn);
+        });
+        
         // Form işlemleri
         document.addEventListener('DOMContentLoaded', function() {
             const forms = document.querySelectorAll('form');

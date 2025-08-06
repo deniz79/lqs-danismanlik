@@ -85,6 +85,17 @@ ErrorDocument 500 /500.html
     Deny from all
 </FilesMatch>
 
+# Protect admin files
+<Files "admin.html">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "admin-login.html">
+    Order allow,deny
+    Allow from all
+</Files>
+
 # SEO-friendly URLs
 RewriteRule ^lean-danismanlik/?$ /lean-danismanlik.html [L]
 RewriteRule ^quality-danismanlik/?$ /quality-danismanlik.html [L]

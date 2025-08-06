@@ -10,6 +10,8 @@ Crawl-delay: 1
 # Disallow admin areas (if any)
 Disallow: /admin/
 Disallow: /private/
+Disallow: /admin.html
+Disallow: /admin-login.html
 
 # Allow important files
 Allow: /index.html
