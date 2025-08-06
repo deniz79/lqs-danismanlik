@@ -51,7 +51,7 @@ body {
 }
 
 .nav-logo img {
-    height: 120px;
+    height: 200px;
     width: auto;
     object-fit: contain;
 }
@@ -910,7 +910,7 @@ body {
     }
     
     .nav-logo img {
-        height: 100px;
+        height: 160px;
     }
 
     .language-switcher {
@@ -994,7 +994,7 @@ body {
     }
     
     .nav-logo img {
-        height: 80px;
+        height: 120px;
     }
 
     .section-title {
