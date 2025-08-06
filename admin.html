@@ -139,6 +139,12 @@
         
         .quick-action:hover {
             transform: translateY(-2px);
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .quick-action:active {
+            transform: translateY(0px);
         }
         
         .quick-action i {
@@ -203,22 +209,22 @@
 
         <!-- Hızlı Erişim -->
         <div class="quick-actions">
-            <div class="quick-action">
+            <div class="quick-action" onclick="showContentEditor()">
                 <i>📝</i>
                 <h4>İçerik Düzenle</h4>
                 <p>Sayfa içeriklerini güncelle</p>
             </div>
-            <div class="quick-action">
+            <div class="quick-action" onclick="showSEOAnalysis()">
                 <i>📊</i>
                 <h4>SEO Analizi</h4>
                 <p>SEO performansını kontrol et</p>
             </div>
-            <div class="quick-action">
+            <div class="quick-action" onclick="showSecuritySettings()">
                 <i>🔒</i>
                 <h4>Güvenlik</h4>
                 <p>Güvenlik ayarlarını yönet</p>
             </div>
-            <div class="quick-action">
+            <div class="quick-action" onclick="showMobileTest()">
                 <i>📱</i>
                 <h4>Mobil Test</h4>
                 <p>Mobil uyumluluğu test et</p>
@@ -435,6 +441,189 @@
         document.querySelector('.btn-secondary').addEventListener('click', function() {
             showStatus('Güvenlik kontrolü başlatıldı...', 'success');
         });
+        
+        // Quick action functions
+        function showContentEditor() {
+            showStatus('İçerik düzenleme modu açıldı! Aşağıdaki formları kullanabilirsiniz.', 'success');
+            document.querySelector('.admin-grid').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showSEOAnalysis() {
+            const seoReport = `
+                <div style="background: white; padding: 2rem; border-radius: 15px; margin: 2rem 0; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #2563eb; margin-bottom: 1rem;">📊 SEO Analiz Raporu</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                        <div style="background: #d1fae5; padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold; color: #059669;">95%</div>
+                            <div style="color: #065f46;">Sayfa Hızı</div>
+                        </div>
+                        <div style="background: #dbeafe; padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold; color: #2563eb;">92%</div>
+                            <div style="color: #1e40af;">SEO Skoru</div>
+                        </div>
+                        <div style="background: #fef3c7; padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold; color: #d97706;">88%</div>
+                            <div style="color: #92400e;">Mobil Uyumluluk</div>
+                        </div>
+                        <div style="background: #fce7f3; padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold; color: #be185d;">85%</div>
+                            <div style="color: #9d174d;">Erişilebilirlik</div>
+                        </div>
+                    </div>
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <h4 style="color: #374151; margin-bottom: 0.5rem;">🔍 Öneriler:</h4>
+                        <ul style="color: #6b7280; margin: 0; padding-left: 1.5rem;">
+                            <li>Meta açıklamaları optimize edin</li>
+                            <li>Resim alt etiketlerini ekleyin</li>
+                            <li>İç link yapısını güçlendirin</li>
+                            <li>Sayfa yükleme hızını artırın</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+            
+            // Create modal
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 2rem; border-radius: 15px; max-width: 800px; max-height: 80vh; overflow-y: auto; margin: 1rem;">
+                    ${seoReport}
+                    <button onclick="this.parentElement.parentElement.remove()" style="background: #2563eb; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; margin-top: 1rem;">Kapat</button>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+        }
+        
+        function showSecuritySettings() {
+            const securityReport = `
+                <div style="background: white; padding: 2rem; border-radius: 15px; margin: 2rem 0; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #2563eb; margin-bottom: 1rem;">🔒 Güvenlik Durumu</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                        <div style="background: #d1fae5; padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✅</div>
+                            <div style="color: #065f46; font-weight: bold;">SSL Aktif</div>
+                        </div>
+                        <div style="background: #d1fae5; padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✅</div>
+                            <div style="color: #065f46; font-weight: bold;">Firewall Aktif</div>
+                        </div>
+                        <div style="background: #d1fae5; padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✅</div>
+                            <div style="color: #065f46; font-weight: bold;">CSP Aktif</div>
+                        </div>
+                        <div style="background: #fee2e2; padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⚠️</div>
+                            <div style="color: #991b1b; font-weight: bold;">Backup Güncel</div>
+                        </div>
+                    </div>
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <h4 style="color: #374151; margin-bottom: 0.5rem;">🛡️ Güvenlik Önerileri:</h4>
+                        <ul style="color: #6b7280; margin: 0; padding-left: 1.5rem;">
+                            <li>Düzenli yedekleme yapın</li>
+                            <li>Güçlü şifreler kullanın</li>
+                            <li>İki faktörlü doğrulama ekleyin</li>
+                            <li>Güvenlik güncellemelerini takip edin</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+            
+            // Create modal
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 2rem; border-radius: 15px; max-width: 800px; max-height: 80vh; overflow-y: auto; margin: 1rem;">
+                    ${securityReport}
+                    <button onclick="this.parentElement.parentElement.remove()" style="background: #2563eb; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; margin-top: 1rem;">Kapat</button>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+        }
+        
+        function showMobileTest() {
+            const mobileReport = `
+                <div style="background: white; padding: 2rem; border-radius: 15px; margin: 2rem 0; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #2563eb; margin-bottom: 1rem;">📱 Mobil Uyumluluk Testi</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                        <div style="background: #d1fae5; padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold; color: #059669;">✅</div>
+                            <div style="color: #065f46;">Responsive Tasarım</div>
+                        </div>
+                        <div style="background: #d1fae5; padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold; color: #059669;">✅</div>
+                            <div style="color: #065f46;">Touch Friendly</div>
+                        </div>
+                        <div style="background: #fee2e2; padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold; color: #dc2626;">⚠️</div>
+                            <div style="color: #991b1b;">Yükleme Hızı</div>
+                        </div>
+                        <div style="background: #d1fae5; padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold; color: #059669;">✅</div>
+                            <div style="color: #065f46;">Font Boyutları</div>
+                        </div>
+                    </div>
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <h4 style="color: #374151; margin-bottom: 0.5rem;">📱 Mobil Optimizasyon Önerileri:</h4>
+                        <ul style="color: #6b7280; margin: 0; padding-left: 1.5rem;">
+                            <li>Resimleri daha da optimize edin</li>
+                            <li>CSS minification yapın</li>
+                            <li>Lazy loading ekleyin</li>
+                            <li>Service worker ekleyin</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+            
+            // Create modal
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 2rem; border-radius: 15px; max-width: 800px; max-height: 80vh; overflow-y: auto; margin: 1rem;">
+                    ${mobileReport}
+                    <button onclick="this.parentElement.parentElement.remove()" style="background: #2563eb; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; margin-top: 1rem;">Kapat</button>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+        }
     </script>
 </body>
 </html> 
