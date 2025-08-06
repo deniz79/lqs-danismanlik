@@ -7,18 +7,18 @@
     </linearGradient>
   </defs>
   
-  <!-- DNA Helix Structure -->
+  <!-- DNA Helix Structure - X Shape -->
   <g transform="translate(10, 10)">
     <!-- Left strand -->
     <path d="M 0 0 Q 5 10 0 20 Q -5 30 0 40" stroke="#2563eb" stroke-width="3" fill="none"/>
     <!-- Right strand -->
     <path d="M 20 0 Q 15 10 20 20 Q 25 30 20 40" stroke="#2563eb" stroke-width="3" fill="none"/>
     
-    <!-- Connecting bars -->
-    <line x1="0" y1="5" x2="20" y2="5" stroke="#2563eb" stroke-width="2"/>
-    <line x1="0" y1="15" x2="20" y2="15" stroke="#2563eb" stroke-width="2"/>
-    <line x1="0" y1="25" x2="20" y2="25" stroke="#2563eb" stroke-width="2"/>
-    <line x1="0" y1="35" x2="20" y2="35" stroke="#2563eb" stroke-width="2"/>
+    <!-- Connecting bars forming X shape -->
+    <line x1="0" y1="5" x2="20" y2="15" stroke="#2563eb" stroke-width="2"/>
+    <line x1="0" y1="15" x2="20" y2="5" stroke="#2563eb" stroke-width="2"/>
+    <line x1="0" y1="25" x2="20" y2="35" stroke="#2563eb" stroke-width="2"/>
+    <line x1="0" y1="35" x2="20" y2="25" stroke="#2563eb" stroke-width="2"/>
   </g>
   
   <!-- Text "DNA" -->
