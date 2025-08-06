@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA LQS - Yönetim Paneli</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        
+        .admin-header {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .admin-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .admin-card h3 {
+            color: #2563eb;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .btn-admin {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-admin:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #6b7280, #4b5563);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+        
+        .status-message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .status-success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+        
+        .status-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .quick-action {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .quick-action:hover {
+            transform: translateY(-2px);
+        }
+        
+        .quick-action i {
+            font-size: 2rem;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        
+        .stat-label {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>🔧 DNA LQS Yönetim Paneli</h1>
+            <p>İçerik yönetimi ve site ayarları</p>
+        </div>
+
+        <!-- Hızlı İstatistikler -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Toplam Sayfa</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Blog Yazısı</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2</div>
+                <div class="stat-label">CV Sayfası</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">SSL Güvenli</div>
+            </div>
+        </div>
+
+        <!-- Hızlı Erişim -->
+        <div class="quick-actions">
+            <div class="quick-action">
+                <i>📝</i>
+                <h4>İçerik Düzenle</h4>
+                <p>Sayfa içeriklerini güncelle</p>
+            </div>
+            <div class="quick-action">
+                <i>📊</i>
+                <h4>SEO Analizi</h4>
+                <p>SEO performansını kontrol et</p>
+            </div>
+            <div class="quick-action">
+                <i>🔒</i>
+                <h4>Güvenlik</h4>
+                <p>Güvenlik ayarlarını yönet</p>
+            </div>
+            <div class="quick-action">
+                <i>📱</i>
+                <h4>Mobil Test</h4>
+                <p>Mobil uyumluluğu test et</p>
+            </div>
+        </div>
+
+        <!-- İçerik Yönetimi -->
+        <div class="admin-grid">
+            <div class="admin-card">
+                <h3>📝 Ana Sayfa İçeriği</h3>
+                <form id="homepageForm">
+                    <div class="form-group">
+                        <label for="heroTitle">Ana Başlık</label>
+                        <input type="text" id="heroTitle" value="DNA LQS Danışmanlık" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="heroSubtitle">Alt Başlık</label>
+                        <input type="text" id="heroSubtitle" value="Lean, Quality, Sustainability" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="heroDescription">Açıklama</label>
+                        <textarea id="heroDescription" rows="4" required>İşletmenizi dönüştürmenin en etkili ve sürdürülebilir yolu. Lean, Quality ve Sustainability alanlarında uzman danışmanlık hizmetlerimizle DNA LQS olarak yanınızdayız.</textarea>
+                    </div>
+                    <button type="submit" class="btn-admin btn-success">💾 Kaydet</button>
+                </form>
+            </div>
+
+            <div class="admin-card">
+                <h3>👥 Ekip Bilgileri</h3>
+                <form id="teamForm">
+                    <div class="form-group">
+                        <label for="teamMemberName">Üye Adı</label>
+                        <input type="text" id="teamMemberName" value="Erdal Yetik" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamMemberTitle">Pozisyon</label>
+                        <input type="text" id="teamMemberTitle" value="Kalite Sistem Müdürü" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamMemberExperience">Deneyim</label>
+                        <input type="text" id="teamMemberExperience" value="15+ yıl" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamMemberExpertise">Uzmanlık Alanları</label>
+                        <textarea id="teamMemberExpertise" rows="3" required>Lean, Quality Management, ISO 9001, ISO 14001, Sustainability, Kaizen, 5S, Six Sigma</textarea>
+                    </div>
+                    <button type="submit" class="btn-admin btn-success">💾 Kaydet</button>
+                </form>
+            </div>
+
+            <div class="admin-card">
+                <h3>🔧 SEO Ayarları</h3>
+                <form id="seoForm">
+                    <div class="form-group">
+                        <label for="pageTitle">Sayfa Başlığı</label>
+                        <input type="text" id="pageTitle" value="Erdal Yetik - DNA LQS Danışmanlık | Kalite Sistem Müdürü" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="metaDescription">Meta Açıklama</label>
+                        <textarea id="metaDescription" rows="3" required>Erdal Yetik - DNA LQS Danışmanlık Kalite Sistem Müdürü. 15+ yıl deneyimli kalite sistem uzmanı. Lean, Quality ve Sustainability alanlarında profesyonel danışmanlık hizmetleri.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="metaKeywords">Anahtar Kelimeler</label>
+                        <input type="text" id="metaKeywords" value="erdal yetik, kalite sistem müdürü, lean danışmanlık, quality danışmanlık, sustainability danışmanlık" required>
+                    </div>
+                    <button type="submit" class="btn-admin btn-success">💾 Kaydet</button>
+                </form>
+            </div>
+
+            <div class="admin-card">
+                <h3>📞 İletişim Bilgileri</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="contactEmail">E-posta</label>
+                        <input type="email" id="contactEmail" value="info@dnalqs.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPhone">Telefon</label>
+                        <input type="tel" id="contactPhone" value="+90 262 123 45 67" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactAddress">Adres</label>
+                        <textarea id="contactAddress" rows="3" required>İzmit, Kocaeli, Türkiye</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactHours">Çalışma Saatleri</label>
+                        <input type="text" id="contactHours" value="Pazartesi - Cuma: 09:00 - 18:00" required>
+                    </div>
+                    <button type="submit" class="btn-admin btn-success">💾 Kaydet</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Güvenlik ve Bakım -->
+        <div class="admin-grid">
+            <div class="admin-card">
+                <h3>🔒 Güvenlik Ayarları</h3>
+                <div class="form-group">
+                    <label for="sslStatus">SSL Durumu</label>
+                    <select id="sslStatus">
+                        <option value="active" selected>Aktif ✅</option>
+                        <option value="inactive">Pasif ❌</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="firewallStatus">Güvenlik Duvarı</label>
+                    <select id="firewallStatus">
+                        <option value="active" selected>Aktif ✅</option>
+                        <option value="inactive">Pasif ❌</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="backupStatus">Otomatik Yedekleme</label>
+                    <select id="backupStatus">
+                        <option value="daily" selected>Günlük ✅</option>
+                        <option value="weekly">Haftalık</option>
+                        <option value="monthly">Aylık</option>
+                        <option value="disabled">Devre Dışı</option>
+                    </select>
+                </div>
+                <button class="btn-admin btn-secondary">🔒 Güvenlik Kontrolü</button>
+            </div>
+
+            <div class="admin-card">
+                <h3>⚡ Performans Optimizasyonu</h3>
+                <div class="form-group">
+                    <label for="cacheStatus">Önbellek</label>
+                    <select id="cacheStatus">
+                        <option value="enabled" selected>Aktif ✅</option>
+                        <option value="disabled">Pasif</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="compressionStatus">Sıkıştırma</label>
+                    <select id="compressionStatus">
+                        <option value="enabled" selected>Aktif ✅</option>
+                        <option value="disabled">Pasif</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="imageOptimization">Resim Optimizasyonu</label>
+                    <select id="imageOptimization">
+                        <option value="enabled" selected>Aktif ✅</option>
+                        <option value="disabled">Pasif</option>
+                    </select>
+                </div>
+                <button class="btn-admin btn-secondary">⚡ Performans Testi</button>
+            </div>
+        </div>
+
+        <!-- Durum Mesajları -->
+        <div id="statusMessages"></div>
+    </div>
+
+    <script>
+        // Form işlemleri
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('form');
+            
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    showStatus('Değişiklikler başarıyla kaydedildi!', 'success');
+                });
+            });
+        });
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('statusMessages');
+            const statusElement = document.createElement('div');
+            statusElement.className = `status-message status-${type}`;
+            statusElement.textContent = message;
+            
+            statusDiv.appendChild(statusElement);
+            
+            setTimeout(() => {
+                statusElement.remove();
+            }, 5000);
+        }
+
+        // Güvenlik kontrolü
+        document.querySelector('.btn-secondary').addEventListener('click', function() {
+            showStatus('Güvenlik kontrolü başlatıldı...', 'success');
+        });
+    </script>
+</body>
+</html> 

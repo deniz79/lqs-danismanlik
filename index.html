@@ -20,6 +20,65 @@
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="VERIFICATION_CODE_HERE">
     
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "DNA LQS Danışmanlık",
+        "url": "https://dnalqs.com",
+        "logo": "https://dnalqs.com/dna-m.png",
+        "description": "Lean, Quality ve Sustainability alanlarında uzman danışmanlık hizmetleri",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Vera house2 B2 D7 Nazlı sok, Şirintepe",
+            "addressLocality": "İzmit",
+            "addressRegion": "Kocaeli",
+            "postalCode": "41100",
+            "addressCountry": "TR"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+90-532-432-71-95",
+            "contactType": "customer service",
+            "email": "info@dnalqs.com"
+        },
+        "sameAs": [
+            "https://linkedin.com/company/dnalqs"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Danışmanlık Hizmetleri",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Lean Danışmanlığı",
+                        "description": "Lean metodolojileri ile işletme optimizasyonu"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Quality Danışmanlığı",
+                        "description": "Kalite yönetim sistemleri ve ISO standartları"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Sustainability Danışmanlığı",
+                        "description": "Sürdürülebilirlik ve ESG danışmanlığı"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dnalqs.com/">
@@ -406,20 +465,35 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <input type="text" placeholder="Adınız" data-tr-placeholder="Adınız" data-en-placeholder="Your Name" required>
+                        <input type="text" id="name" name="name" placeholder="Adınız" data-tr-placeholder="Adınız" data-en-placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="E-posta" data-tr-placeholder="E-posta" data-en-placeholder="Email" required>
+                        <input type="email" id="email" name="email" placeholder="E-posta" data-tr-placeholder="E-posta" data-en-placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Konu" data-tr-placeholder="Konu" data-en-placeholder="Subject" required>
+                        <input type="tel" id="phone" name="phone" placeholder="Telefon (Opsiyonel)" data-tr-placeholder="Telefon (Opsiyonel)" data-en-placeholder="Phone (Optional)">
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Mesajınız" data-tr-placeholder="Mesajınız" data-en-placeholder="Your Message" rows="5" required></textarea>
+                        <select id="service" name="service" required>
+                            <option value="">Hizmet Seçiniz</option>
+                            <option value="lean">Lean Danışmanlığı</option>
+                            <option value="quality">Quality Danışmanlığı</option>
+                            <option value="sustainability">Sustainability Danışmanlığı</option>
+                            <option value="other">Diğer</option>
+                        </select>
                     </div>
-                    <button type="submit" class="submit-btn" data-tr="Gönder" data-en="Send">Gönder</button>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Mesajınız" data-tr-placeholder="Mesajınız" data-en-placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                    </div>
+                    <button type="submit" class="submit-btn" data-tr="Gönder" data-en="Send">
+                        <span class="btn-text">Gönder</span>
+                        <span class="btn-loading" style="display: none;">Gönderiliyor...</span>
+                    </button>
                 </form>
             </div>
         </div>
@@ -458,6 +532,8 @@
         </div>
     </footer>
 
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="script.js"></script>
 </body>
 </html> 

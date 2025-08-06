@@ -248,6 +248,33 @@ body {
     justify-content: center;
     align-items: center;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.floating-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.floating-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+    border-radius: 27px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.floating-card:hover::before {
+    opacity: 0.3;
+    animation: gradientShift 3s ease infinite;
 }
 
 .floating-card:nth-child(1) {
@@ -307,6 +334,12 @@ body {
         transform: scale(1) rotate(0deg);
         background: rgba(255, 255, 255, 0.15);
     }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Services Section */
@@ -985,6 +1018,117 @@ body {
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2rem;
+    }
+    
+    /* Enhanced mobile navigation */
+    .nav-container {
+        padding: 0.5rem 1rem;
+    }
+    
+    .nav-logo img {
+        height: 80px;
+    }
+    
+    .nav-menu {
+        top: 60px;
+        padding: 1rem 0;
+    }
+    
+    .nav-menu a {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    /* Enhanced mobile hero section */
+    .hero {
+        padding: 2rem 0;
+        min-height: 80vh;
+    }
+    
+    .hero-container {
+        gap: 2rem;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+    
+    /* Enhanced mobile floating cards */
+    .floating-card {
+        width: 80px;
+        height: 80px;
+        padding: 0.5rem;
+    }
+    
+    .floating-card i {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .floating-card span {
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+    
+    /* Enhanced mobile contact form */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Enhanced mobile buttons */
+    .cta-button,
+    .submit-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        width: 100%;
+    }
+    
+    /* Enhanced mobile language switcher */
+    .language-switcher {
+        gap: 0.5rem;
+        margin-left: 0.5rem;
+    }
+    
+    .lang-btn {
+        padding: 0.5rem 1rem;
+        min-width: 80px;
+        font-size: 0.8rem;
+    }
+    
+    .lang-text {
+        font-size: 0.7rem;
+    }
+    
+    .lang-flag {
+        font-size: 14px;
     }
     
 
